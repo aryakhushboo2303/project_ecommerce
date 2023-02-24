@@ -1,0 +1,41 @@
+<div class="vh-100" style="display:flex; align-items: center; justify-content: center; flex-direction: column">
+  <div>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @store.name %>
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= @store.category %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @store.color %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= @store.description %>
+  </p>
+
+  <p>
+    <strong>Author:</strong>
+    <%= @store.price %>
+  </p>
+    <%= link_to 'Edit', edit_store_path(@store),class:"btn btn-secondary", style:"color: white; text-align:center;" %> |
+    <%= link_to 'Back', stores_path,class:"btn btn-secondary", style:"color: white; text-align:center;"%>
+  </div>
+  <div>
+    <% @store.files.each do |file| %>
+    <%= image_tag file, width:"250px" %><br>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,19 @@
+<div id="main"  >
+  <img class="d-block w-100 " src="/assets/back12.jpeg" alt="First slide" style="height: 500px">
+</div>
+ <h1 style="text-align: center">Products</h1>
+<div class="row" style="padding:5%;">
+<% @instruments.each do |instr|%>
+  <div class="col-sm-4">
+    <div class="card" style="text-align: center;">
+      <div class="card-body">
+        <%= image_tag instr.files.first, :width=>"200px", :height=>"200px" %>
+        <h5 class="card-title"><%= instr.name %></h5>
+        <p class="card-text">Category :<%= instr.category %></p>
+        <p class="card-text">Price :<%= instr.price %></p>
+        <%= button_to 'Add to Cart',line_items_path(:store_id=>instr.id),class: "btn btn-primary"%>
+      </div>
+    </div>
+  </div> 
+<% end %>
+</div>
